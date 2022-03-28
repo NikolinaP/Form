@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <title>Assignment</title>
+</head>
+<body>
+    <form action="#" method="post">
+    <h1>Vechile rental agreement & receipt invoice</h1>
+<!-- Customer information section -->
+    <h2>Customer information</h2>
+
+    <label for="name">Name:*</label>
+    <input type="text" id="name" name="customer_name" required="true"><br>
+
+    <label for="name">Surname:*</label>
+    <input type="text" id="surname" name="customer_surname" required="true"><br>
+
+    <label for="name">ID/Passport number:*</label>
+    <input type="text" id="passport" name="customer_passport" required="true"><br>
+
+    <!-- <label for="name">Phone number:</label>
+    <input type="text" required="true"><br> -->
+    <label>Enter your phone number in the format (123) - 456 - 789*
+        <input name="tel1" type="tel" pattern="[0-9]{3}" aria-label="3-digit area code" size="2" required="true"/>
+        <input name="tel2" type="tel" pattern="[0-9]{3}" aria-label="3-digit prefix" size="2" required="true"/>
+        <input name="tel3" type="tel" pattern="[0-9]{3}" aria-label="3-digit number" size="2" required="true"/>
+    </label>
+    <br>
+    <label for="name">Address</label>
+    <input type="text" id="address" name="customer_address">
+
+<!-- Vechile information section -->
+    <h2>Vechile information</h2>
+    <label for="type">Choose vechile type:*</label>
+    <select id="vechile_type" onchange="configureDropDownLists(this,document.getElementById('vechile_model'))" required="true">
+        <option value="">--Select--</option>
+        <option value="Small">Small</option>
+        <option value="Sedan">Sedan</option>
+        <option value="Pickup">Pickup</option>
+        <option value="Minivan">Minivan</option>
+        <option value="SUV">SUV</option>
+        </select>
+        <label for="model">Choose vechile model:*</label>
+        <select id="vechile_model" required="true">
+        </select>
+<!-- Payment calculation section -->
+
+    <h2>Payment calculation</h2>
+    <label>
+        Enter date from:*
+        <input type="datetime-local" id="date1" name="datefrom" required="true">
+      </label>
+<br>
+      <label>
+        Enter date to:*
+        <input type="datetime-local" id="date2" name="dateto" required="true">
+      </label>
+      <br>
+      <button id="sub"
+      onclick="func()"
+      type="button"> Calculate
+</button>
+<h3 id="ans"></h3>
+      <h3>Payment method</h3>
+      <p>Select your payment method:*</p>
+      <input type="radio" name="tab" value="creditcard" onclick="show1();" required="true"/>
+      Credit card
+      <input type="radio" name="tab" value="creditcard" onclick="show2();" required="true"/>
+      Cash
+      <div id="div1" class="hide">
+
+ <p>Customer information</p>
+    <label for="firstname">First Name:*</label>
+    <input type="text" required="true"><br>
+    <label for="lastname">Last name:*</label>
+    <input type="text" required="true"><br>
+    <label for="creditcardnum">Credit Card Number:*</label>
+    <input type="text" required="true"><br>
+    <label for="securitycode">Security Code:*</label>
+    <input type="text" required="true"><br>
+    <label for="cardexpiration">Card expiration*</label>
+    <input type="text" required="true">
+   
+      </div>
+      <br>
+      <input id="checkbox" name="checkbox" type="checkbox" required="true">
+      <label for="checkbox">I agree* </label>
+      <br>
+      <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>
